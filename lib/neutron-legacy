@@ -823,7 +823,7 @@ function _move_neutron_addresses_route {
             IP_ADD="sudo ip addr add $IP_BRD dev $to_intf"
         fi
 
-        $IP_DEL; $IP_ADD; $ADD_OVS_PORT; $ADD_DEFAULT_ROUTE
+        $IP_DEL; $IP_ADD; $ADD_OVS_PORT; sudo ip link set up dev $to_intf; $ADD_DEFAULT_ROUTE
     fi
 }
 
